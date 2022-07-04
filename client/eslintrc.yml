@@ -1,0 +1,102 @@
+root: true,
+ extends: [
+  - "plugin:vue/vue3-essential"
+  - "plugin:vue/vue3-recommended"
+  - "plugin:prettier/recommended"
+  - "eslint:recommended"
+ ]
+
+ plugins: 
+ - vue
+
+ rules: {
+  quotes: [ "error", "double" ],
+  object-curly-spacing: [ "error", "always" ],
+  indent: [ "error", 2, { SwitchCase: 1 } ],
+  no-invalid-this: warn,
+  max-len: [ "off", { "code": 80 } ],
+  no-console: [ "error", { "allow": [ "warn", "error", "info", "table" ] } ],
+  valid-jsdoc: off,
+  require-jsdoc: off,
+  vue/no-v-for-template-key: off,
+  vue/no-multiple-template-root: off,
+  vue/order-in-components: off,
+  vue/no-v-model-argument: off,
+  # v-html is always sanitized here
+  vue/no-v-html: off,
+  eol-last: error,
+  operator-linebreak: [ "error", "none" ],
+  tailwindcss/no-custom-classname: off,
+
+  #  eslint-plugin-vue rules
+  vue/require-name-property: error,
+  vue/match-component-file-name: [ "error", { extensions: [ "vue" ] } ],
+  vue/array-bracket-newline: error,
+  vue/array-bracket-spacing: error,
+  vue/arrow-spacing: error,
+  vue/block-spacing: error,
+  vue/brace-style: error,
+  vue/camelcase: error,
+  vue/comma-spacing: error,
+  vue/comma-style: error,
+  vue/dot-location: error,
+  vue/dot-notation: error,
+  vue/eqeqeq: error,
+  vue/func-call-spacing: error,
+  vue/key-spacing: error,
+  vue/keyword-spacing: error,
+  vue/no-constant-condition: error,
+  vue/no-empty-pattern: error,
+  vue/no-extra-parens: error,
+  vue/no-irregular-whitespace: error,
+  vue/no-restricted-syntax: error,
+  vue/no-sparse-arrays: error,
+  vue/no-useless-concat: error,
+  vue/object-curly-newline: error,
+  vue/object-property-newline:
+    [ "error", { allowAllPropertiesOnSameLine: true } ],
+  vue/operator-linebreak: error,
+  vue/space-in-parens: error,
+  vue/space-infix-ops: error,
+  vue/space-unary-ops: error,
+  vue/template-curly-spacing: error,
+  vue/v-on-event-hyphenation: off,
+  vue/multi-word-component-names: off,
+  quotes: [ 'error', 'double' ],
+    max-len: [ 'off', { 'code': 80 } ],
+    new-cap: "off",
+    valid-jsdoc: 'off',
+    require-jsdoc: 'off',
+    no-console: [ "error", { "allow": [ 'warn', 'error', 'info', 'table' ] } ],
+    no-invalid-this: 'off',
+    object-curly-spacing: [ 'error', 'always' ],
+    prefer-promise-reject-errors: warn,
+    indent: [ "error", 2, { SwitchCase: 1 } ],
+    semi: [ 2, "always" ],
+    comma-dangle: ["error", "always-multiline"],
+    camelcase: warn,
+    eol-last: ["error", "always"],
+    "array-bracket-newline": [
+      "error",
+      {
+        "multiline": false
+      }
+    ],
+    "no-trailing-spaces": ["error"],
+    "object-curly-newline": [
+      "error",
+      {
+        # ObjectExpression is for variable assignment to an object
+        "ObjectExpression": { "multiline": true, "minProperties": 1 },
+        # ObjectPattern is for assignment destructuring from an object
+        "ObjectPattern": { "multiline": true, "minProperties": 3 },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": "always"
+      }
+    ],
+    "object-property-newline": ["error"],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "space-infix-ops": [2],
+    "arrow-spacing": "error"
+}
+settings: { tailwindcss: { groupByResponsive: true } }

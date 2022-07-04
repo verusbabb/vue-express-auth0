@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h2>This is the Home Page</h2>
-  </div>
+  <div>This page will profile all house leadership</div>
 </template>
 
 <script>
