@@ -3,7 +3,7 @@ import User from "../../models/user.js";
 
 const app = express();
 
-app.get("/users", async (req, res) => {
+app.get("/api/users", async (req, res) => {
   const users = await User.find({});
   try {
     res.send(users);
@@ -12,7 +12,7 @@ app.get("/users", async (req, res) => {
   }
 });
 
-app.get("/users/:id", async (req, res) => {
+app.get("/api/users/:id", async (req, res) => {
   const user = await User.findById({
     _id: req.params.id,
   });
@@ -25,7 +25,7 @@ app.get("/users/:id", async (req, res) => {
   }
 });
 
-app.post("/users", async (req, res) => {
+app.post("/api/users", async (req, res) => {
   const user = new User(req.body);
   try {
     await user.save();
@@ -35,7 +35,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
-app.post("/users/:id", async (req, res) => {
+app.post("/api/users/:id", async (req, res) => {
   const user = await User.findById({
     _id: req.params.id,
   });
@@ -48,7 +48,7 @@ app.post("/users/:id", async (req, res) => {
   }
 });
 
-app.delete("/users/:id", async (req, res) => {
+app.delete("/api/users/:id", async (req, res) => {
   const user = await User.findByIdAndDelete({
     _id: req.params.id,
   });

@@ -3,7 +3,7 @@ import Event from "../../models/event.js";
 
 const app = express();
 
-app.get("/events", async (req, res) => {
+app.get("/api/events", async (req, res) => {
   const events = await Event.find({});
 
   try {
@@ -13,7 +13,7 @@ app.get("/events", async (req, res) => {
   }
 });
 
-app.get("/events/:id", async (req, res) => {
+app.get("/api/events/:id", async (req, res) => {
   const event = await Event.findById({
     _id: req.params.id,
   });
@@ -25,7 +25,7 @@ app.get("/events/:id", async (req, res) => {
   }
 });
 
-app.post("/events", async (req, res) => {
+app.post("/api/events", async (req, res) => {
   const event = new Event(req.body);
   try {
     await event.save();
@@ -35,7 +35,7 @@ app.post("/events", async (req, res) => {
   }
 });
 
-app.post("/events/:id", async (req, res) => {
+app.post("/api/events/:id", async (req, res) => {
   const event = await Event.findById({
     _id: req.params.id,
   });
@@ -48,7 +48,7 @@ app.post("/events/:id", async (req, res) => {
   }
 });
 
-app.delete("/events/:id", async (req, res) => {
+app.delete("/api/events/:id", async (req, res) => {
   const event = await Event.findByIdAndDelete({
     _id: req.params.id,
   });

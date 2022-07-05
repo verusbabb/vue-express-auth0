@@ -3,7 +3,7 @@ import Registration from "../../models/registration.js";
 
 const app = express();
 
-app.get("/registrations", async (req, res) => {
+app.get("/api/registrations", async (req, res) => {
   const registrations = await Registration.find({});
 
   try {
@@ -13,7 +13,7 @@ app.get("/registrations", async (req, res) => {
   }
 });
 
-app.get("/registrations/:id", async (req, res) => {
+app.get("/api/registrations/:id", async (req, res) => {
   const registration = await Registration.findById({
     _id: req.params.id,
   });
@@ -25,7 +25,7 @@ app.get("/registrations/:id", async (req, res) => {
   }
 });
 
-app.post("/registrations", async (req, res) => {
+app.post("/api/registrations", async (req, res) => {
   const registration = new Registration(req.body);
   try {
     await registration.save();
@@ -35,7 +35,7 @@ app.post("/registrations", async (req, res) => {
   }
 });
 
-app.post("/registrations/:id", async (req, res) => {
+app.post("/api/registrations/:id", async (req, res) => {
   const registration = await Registration.findById({
     _id: req.params.id,
   });
@@ -48,7 +48,7 @@ app.post("/registrations/:id", async (req, res) => {
   }
 });
 
-app.delete("/registrations/:id", async (req, res) => {
+app.delete("/api/registrations/:id", async (req, res) => {
   const registration = await Registration.findByIdAndDelete({
     _id: req.params.id,
   });
