@@ -12,6 +12,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
+//get user by id
 app.get("/api/users/:id", async (req, res) => {
   const user = await User.findById({
     _id: req.params.id,
