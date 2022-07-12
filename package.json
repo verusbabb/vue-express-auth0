@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/verusbabb/alphanubeta/issues"
   },
-  "homepage": "https://github.com/verusbabb/alphanubeta#readme"
+  "homepage": "https://github.com/verusbabb/alphanubeta#readme",
+  "devDependencies": {
+    "@mdi/js": "^6.9.96"
+  }
 }

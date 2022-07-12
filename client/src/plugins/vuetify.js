@@ -11,12 +11,7 @@ import * as directives from "vuetify/directives";
 
 export default createVuetify({
   icons: {
-    defaultSet: "fa",
-    aliases,
-    sets: {
-      fa,
-      mdi,
-    },
+    iconfont: "mdiSvg", // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
   },
   components,
   directives,
