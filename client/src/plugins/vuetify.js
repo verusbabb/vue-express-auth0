@@ -11,7 +11,12 @@ import * as directives from "vuetify/directives";
 
 export default createVuetify({
   icons: {
-    iconfont: "mdiSvg", // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+    defaultSet: "fa",
+    aliases,
+    sets: {
+      fa,
+      mdi,
+    },
   },
   components,
   directives,
@@ -23,10 +28,10 @@ export default createVuetify({
           primary: "#013368",
           secondary: "#ff8e31",
           accent: "#4593ff",
+          indigo: "#013368",
         },
         background: "#e8eef2",
       },
     },
   },
-  // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 });
