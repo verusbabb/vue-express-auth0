@@ -1,5 +1,5 @@
 // Styles
-import "@mdi/font/css/materialdesignicons.css";
+
 import "vuetify/styles";
 
 // Vuetify
@@ -14,8 +14,8 @@ export default createVuetify({
     defaultSet: "fa",
     aliases,
     sets: {
-      fa,
       mdi,
+      fa,
     },
   },
   components,
