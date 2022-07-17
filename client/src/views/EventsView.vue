@@ -1,22 +1,42 @@
 <template>
-  <div>
-    <h1>This is the Events Page</h1>
-  </div>
+  <main>
+    <v-container fluid align="center">
+      <v-row>
+        <div class="mx-auto text-h5 font-weight-bold text-indigo my-8">
+          Some intro text
+        </div>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <HomeComing />
+        </v-col>
+        <v-col>
+          <TurkeyPull />
+        </v-col>
+        <v-col>
+          <MainEvent />
+        </v-col>
+      </v-row>
+    </v-container>
+  </main>
 </template>
 
 <script>
+  import HomeComing from "../components/HomeComing.vue";
+  import TurkeyPull from "../components/TurkeyPull.vue";
+  import MainEvent from "../components/MainEvent.vue";
   export default {
-    name: "EventsView",
-    components: {},
+    name: "EventCards",
+    components: {
+      HomeComing,
+      TurkeyPull,
+      MainEvent,
+    },
+    data() {
+      return {
+        show: false,
+      };
+    },
   };
 </script>
-
-<style>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-  }
-</style>
