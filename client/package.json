@@ -8,6 +8,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@auth0/auth0-vue": "^1.0.2",
     "roboto-fontface": "*",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",

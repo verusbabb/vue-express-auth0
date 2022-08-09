@@ -16,7 +16,8 @@
         <v-btn to="/contact" color="grey-lighten-2">Contact</v-btn>
       </div>
         </v-toolbar-title>
-        <v-btn to="/signin" color="grey">Sign In</v-btn>
+        <UserBadge />
+        
     </v-app-bar><v-main>
       <router-view v-slot="{ Component, route }">
         <transition name="fade">
@@ -28,12 +29,23 @@
 </template>
 
 <script>
+import { useAuth0 } from '@auth0/auth0-vue';
+import UserBadge from "./components/UserBadge.vue"
+
   export default {
+  components: { UserBadge },
     name: "App",
-    data() {
+    setup() {
+      const auth0 = useAuth0();
+
       return {
-        show: false,
-      };
-    },
-  };
+        login: () => auth0.loginWithRedirect(),
+        logout: () => auth0.logout({ returnTo: window.location.origin }),
+        user: auth0.user,
+        isAuthenticated: auth0.isAuthenticated,
+        isLoading: auth0.isLoading,
+        UserBadge,
+        }
+      }
+    }
 </script>

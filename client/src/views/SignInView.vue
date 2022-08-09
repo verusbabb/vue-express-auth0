@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: "HomeView",
+    name: "SignInView",
     components: {},
   };
 </script>
