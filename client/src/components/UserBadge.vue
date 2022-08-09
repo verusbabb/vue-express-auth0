@@ -10,8 +10,8 @@
         v-bind="props"
       >
         <v-btn
-          style="background-color: #f5f5f5; border-radius: 10px"
           v-if="!isAuthenticated"
+          style="background-color: #f5f5f5; border-radius: 10px"
           @click="login"
           >Log in</v-btn
         >
@@ -24,7 +24,6 @@
       <v-btn
         class="ma-2"
         style="background-color: #f5f5f5; border-radius: 10px"
-        v-if="isAuthenticated"
         @click="logout"
         >Log out</v-btn
       >
@@ -39,14 +38,11 @@
     name: "UserBadge",
     setup() {
       const auth0 = useAuth0();
-      const show = ref(true);
+      const show = true;
 
       return {
-        login: (show) => {
-          show = !show;
-          auth0.loginWithRedirect();
-        },
-        logout: () => auth0.logout({ returnTo: window.location.origin }),
+        login: (show) => auth0.loginWithRedirect(),
+        logout: () => auth0.logout({ returnTo: `${window.location.origin}` }),
         user: auth0.user,
         isAuthenticated: auth0.isAuthenticated,
         isLoading: auth0.isLoading,
