@@ -9,10 +9,10 @@
       </template>
       <v-toolbar-title>
       <div class="d-flex">
-        <v-btn to="/" color="grey-lighten-2">Alpha Nu</v-btn>
-        <v-btn to="/events" color="grey-lighten-2">150th Anniversary Events</v-btn>
-        <v-btn to="/leadership" color="grey-lighten-2">Leadership</v-btn>
-        <v-btn to="/memberaccess" color="grey-lighten-2">Member Access</v-btn>
+        <v-btn to="/" color="grey-lighten-2">Tom Babb</v-btn>
+        <v-btn to="/events" color="grey-lighten-2">Blog Posts</v-btn>
+        <v-btn to="/leadership" color="grey-lighten-2">Bio</v-btn>
+        <v-btn to="/memberaccess" color="grey-lighten-2">Art Work</v-btn>
         <v-btn to="/contact" color="grey-lighten-2">Contact</v-btn>
       </div>
         </v-toolbar-title>
